@@ -138,9 +138,11 @@ h1 {
 
   .container {
     padding: 25px 25px 15px 55px;
-    background: rgba(0, 0, 0, 0.1);
+    /* background: rgba(0, 0, 0, 0.1); */
     border-left: 5px solid rgba(0, 0, 0, 0.3);
     border-radius: 0 4px 4px 0;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .quote {
@@ -162,5 +164,6 @@ h1 {
 
   .source {
     font-size: 1.25rem;
-  }
 }
+
+
