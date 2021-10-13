@@ -29,6 +29,12 @@ const quotes = [
     quote: "Expecting the world to treat you fairly because you are a good person is a little like expecting the bull not to attack you because you are a vegetarian.",
     source: "Dennis Wholey",
     citation: "https://www.azquotes.com/quote/540836",
+    category: 'funny'
+  },
+  {
+    quote: "Before you judge a man, walk a mile in his shoes. After that who cares?... He's a mile away and you've got his shoes",
+    source: 'Billy Connolly',
+    category: 'funny'
   },
   {
     quote: "When you reach the end of your rope, tie a knot in it and hang on.",
@@ -39,9 +45,28 @@ const quotes = [
     source: "Benjamin Franklin"
   },
   {
-    quote: "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
-    source:  "Patrick McKenzie"
-  }
+    quote: "If you think you are too small to make a difference, try sleeping with a mosquito",
+    source:  "Dalai Lama",
+    category: 'funny'
+  },
+  {
+    quote: "May the Force be with you.",
+    source: "Star Wars",
+    year: '1977',
+    category: 'film'
+  },
+  {
+    quote: "There's no crying in baseball!",
+    source: "A League of their Own",
+    year: '1992',
+    category: 'film'
+  },
+  {
+    quote: "Nobody puts Baby in a corner.",
+    source: "Dirty Dancing",
+    year: '1987',
+    category: 'film'
+  },
 ]
 
 const updateCountdown = () => {
@@ -101,14 +126,16 @@ const printQuote = () => {
   let quote = getRandomQuote()
   
   document.querySelector('.quote').innerHTML = quote.quote
-  document.querySelector('.source').innerHTML = quote.source
+  document.querySelector('.source').innerHTML = `
+    ${quote.source}${quote.year ? `<span class="year">${quote.year}</span>` : ''}
+  `
 }
 
 
 
 let currentQuoteIndex = 0
 getRandomColor()
-printQuote(false)
+printQuote()
 
 
 

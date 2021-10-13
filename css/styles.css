@@ -168,7 +168,8 @@ h1 {
   }
 }
 
-.timer-box {
+.timer-box,
+.category {
   border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   width: 12em;
