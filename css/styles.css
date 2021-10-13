@@ -169,7 +169,7 @@ h1 {
 }
 
 .timer-box,
-.category {
+.category-button {
   border: 2px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   width: 12em;
@@ -189,4 +189,10 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

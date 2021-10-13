@@ -122,7 +122,7 @@ const getRandomQuote = category => {
 }
 
 /*
- * Print the quote to the page. Includes resetting new quote countdown and
+ * Print the quote to the page. Includes resetting new quote countdown 
  * and getting a new color for the page background. 
  */
 const printQuote = (category = null) => {
@@ -131,16 +131,17 @@ const printQuote = (category = null) => {
 
   // By default, functions called from an event listener pass
   // the event as an argument. If the argument passed is
-  // not a string (e.g. it's an event) make sure it 
-  // is not passed to the getRandomQuote function.
+  // not a string (e.g. it's an event) make sure that 
+  // null is passed to the getRandomQuote function.
   if (typeof category !== 'string') category = null
+
   const quote = getRandomQuote(category)
-
-  // Build source string. If a quote has a year and/or citation attributes include them.
-  const source = `${quote.source}${quote.year ? `<span class="year">${quote.year}</span>` : ''}${quote.citation ? `<span class="citation">${quote.citation}</span>` : ''}`
-
+  
   document.querySelector('.quote').innerHTML = quote.quote
-  document.querySelector('.source').innerHTML = source
+  // Build source string. If a quote has a year and/or citation attributes include them.
+  document.querySelector('.source').innerHTML = `${quote.source}${quote.year ? `<span class="year">${quote.year}</span>` : ''}${quote.citation ? `<span class="citation">${quote.citation}</span>` : ''}`
+  // Build a category string. If a quote does not have a category, set it to 'General'.
+  document.querySelector('.category').innerHTML = `Category: ${quote.category ? quote.category[0].toUpperCase() + quote.category.slice(1) : 'General'}`
 }
 
 let timer = 5
