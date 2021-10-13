@@ -121,7 +121,7 @@ h1 {
   }
 
   header {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
 
   h1 {
@@ -181,4 +181,12 @@ h1 {
   display: flex;
   justify-content: end;
   width: 94%;
+}
+
+.categories {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
