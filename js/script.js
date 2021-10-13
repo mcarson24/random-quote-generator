@@ -44,6 +44,30 @@ const quotes = [
   }
 ]
 
+const updateCountdown = () => {
+  if (timer === 1) {
+    printQuote()
+    timer = 5
+  } else {
+    timer--
+  }
+  updateCountdownDisplay()
+}
+
+const resetCountdown = () => {
+  timer = 5
+  clearInterval(countdown)
+  updateCountdownDisplay()
+  countdown = setInterval(updateCountdown, 1000)
+}
+
+const updateCountdownDisplay = () => {
+  document.querySelector('.time').innerHTML = `${timer} ${timer > 1 ? 'seconds' : 'second' }`
+}
+
+let timer = 5
+
+
 /***
  * `getRandomQuote` function
 ***/
@@ -64,23 +88,29 @@ const getRandomQuote = () => {
 }
 
 
+
+let countdown = setInterval(updateCountdown, 1000);
+
 /***
  * `printQuote` function
 ***/
 const printQuote = () => {
+  resetCountdown()
   getRandomColor()
-  let quote = getRandomQuote()
-  const quoteElement = document.querySelector('.quote')
-  const authorElement = document.querySelector('.source')
-  
-  quoteElement.innerHTML = quote.quote
 
-  authorElement.innerHTML = quote.source
+  let quote = getRandomQuote()
+  
+  document.querySelector('.quote').innerHTML = quote.quote
+  document.querySelector('.source').innerHTML = quote.source
 }
 
-getRandomColor()
+
+
 let currentQuoteIndex = 0
-printQuote()
+getRandomColor()
+printQuote(false)
+
+
 
 /***
  * click event listener for the print quote button
